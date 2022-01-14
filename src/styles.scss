@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@use "util/variables" as var;
+
+* {
+  font-family: "Poppins", Helvetica, Arial, sans-serif!important;
+  box-sizing: border-box;
+  outline: none!important;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  -webkit-tap-highlight-color: transparent;
+  flex-wrap: nowrap;
+}
+
+body {
+  font-size: 18px;
+  overflow-x: hidden;
+  background-color: var.$white;
+}
+
+i-feather {
+  height: 100%!important;
+  display: flex;
+
+  & svg {
+    align-self: center;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var.$white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}

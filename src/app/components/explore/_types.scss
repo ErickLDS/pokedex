@@ -1,0 +1,80 @@
+.type {
+    text-align: center;
+    background-color: #c2c2c2;
+    border-radius: 6px;
+    padding: 4px 1.5em;
+    margin: 10px 0;
+    box-shadow: -2px 2px 0px rgba(0, 0, 0, 0.16);
+
+    &.grass {
+        background-color: lighten(var.$grass, var.$l-type);
+    }
+
+    &.water {
+        background-color: lighten(var.$water, var.$l-type);
+    }
+
+    &.fire {
+        background-color: lighten(var.$fire, var.$l-type);
+    }
+
+    &.poison {
+        background-color: lighten(var.$poison, var.$l-type);
+    }
+
+    &.bug {
+        background-color: lighten(var.$bug, var.$l-type);
+    }
+
+    &.flying {
+        background-image: linear-gradient(to bottom, lighten(var.$flying-1, var.$l-type) 25%, lighten(var.$flying-2, var.$l-type));
+    }
+
+    &.electric {
+        background-color: lighten(var.$electric, var.$l-type);
+    }
+
+    &.ground {
+        background-image: linear-gradient(to bottom, lighten(var.$ground-1, var.$l-type) 25%, lighten(var.$ground-2, var.$l-type));
+    }
+
+    &.fairy {
+        background-color: lighten(var.$fairy, var.$l-type);
+    }
+
+    &.normal {
+        background-color: lighten(var.$normal, var.$l-type);
+    }
+
+    &.fighting {
+        background-color: lighten(var.$fighting, var.$l-type);
+    }
+
+    &.dark {
+        background-color: lighten(var.$dark, var.$l-type);
+    }
+
+    &.ghost {
+        background-color: lighten(var.$ghost, var.$l-type);
+    }
+
+    &.ice {
+        background-color: lighten(var.$ice, var.$l-type);
+    }
+
+    &.psychic {
+        background-color: lighten(var.$psychic, var.$l-type);
+    }
+
+    &.steel {
+        background-color: lighten(var.$steel, var.$l-type);
+    }
+
+    &.rock {
+        background-color: lighten(var.$rock, var.$l-type);
+    }
+
+    &.dragon {
+        background-image: linear-gradient(to bottom, lighten(var.$dragon-1, var.$l-type) 25%, lighten(var.$dragon-2, var.$l-type));
+    }
+}

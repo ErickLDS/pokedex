@@ -1,0 +1,46 @@
+@use "../../../../util/variables" as var;
+
+.navbar {
+    padding: 20px;
+    margin-bottom: 80px;
+
+    & .container-fluid {
+        padding: 0;
+        max-width: 1200px;
+    }
+
+    & .nav-item a {
+        font-size: 1em;
+        font-weight: 400;
+        color: var.$black;
+        padding: 0 20px;
+    }
+
+    & .nav-item i-feather {
+        width: 1.5em;
+        color: var.$black;
+        margin: 0 15px;
+        display: flex;
+    }
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-logo {
+    width: 55px;
+    height: 55px;
+
+    & img {
+        object-fit: contain;
+        align-self: center;
+    }
+}
+
+.navbar-toggler {
+    padding: 0;
+    line-height: 0;
+    width: 1.8em;
+    align-self: center;
+}

@@ -1,0 +1,18 @@
+<div class="cards__poke">
+    <div *ngFor="let pokemon of pokemons" [ngClass]="['poke', pokemon.type]">
+        <p class="poke__name">{{pokemon.name}}</p>
+
+        <div class="d-flex flex-row justify-content-between">
+            <div class="poke__types">
+                <p class="poke__types__title">tipo<span *ngIf="pokemon.types.length > 1">s</span>:</p>
+                <p *ngFor="let type of pokemon.types" [ngClass]="['type', type.type.name]">{{type.type.name}}</p>
+            </div>
+
+            <div class="poke__img">
+                <img [src]="pokemon.img" alt="pokemon.name">
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-primary mt-4" (click)="getDados()">Ver Mais</button>

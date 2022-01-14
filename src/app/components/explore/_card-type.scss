@@ -1,0 +1,75 @@
+.poke {
+    background-color: #c9c9c9;
+
+    &.grass {
+        background-color: lighten(var.$grass, var.$l-card);
+    }
+
+    &.water {
+        background-color: lighten(var.$water, var.$l-card);
+    }
+
+    &.fire {
+        background-color: lighten(var.$fire, var.$l-card);
+    }
+
+    &.poison {
+        background-color: lighten(var.$poison, var.$l-card);
+    }
+
+    &.bug {
+        background-color: lighten(var.$bug, var.$l-card);
+    }
+
+    &.flying {
+        background-image: linear-gradient(to bottom, lighten(var.$flying-1, var.$l-card) 25%, lighten(var.$flying-2, var.$l-card));
+    }
+
+    &.electric {
+        background-color: lighten(var.$electric, var.$l-card);
+    }
+
+    &.ground {
+        background-image: linear-gradient(to bottom, lighten(var.$ground-1, var.$l-card) 25%, lighten(var.$ground-2, var.$l-card));
+    }
+
+    &.fairy {
+        background-color: lighten(var.$fairy, var.$l-card);
+    }
+
+    &.normal {
+        background-color: lighten(var.$normal, var.$l-card);
+    }
+
+    &.fighting {
+        background-color: lighten(var.$fighting, var.$l-card);
+    }
+
+    &.dark {
+        background-color: lighten(var.$dark, var.$l-card);
+    }
+
+    &.ghost {
+        background-color: lighten(var.$ghost, var.$l-card);
+    }
+
+    &.ice {
+        background-color: lighten(var.$ice, var.$l-card);
+    }
+
+    &.psychic {
+        background-color: lighten(var.$psychic, var.$l-card);
+    }
+
+    &.steel {
+        background-color: lighten(var.$steel, var.$l-card);
+    }
+
+    &.rock {
+        background-color: lighten(var.$rock, var.$l-card);
+    }
+
+    &.dragon {
+        background-image: linear-gradient(to bottom, lighten(var.$dragon-1, var.$l-card) 25%, lighten(var.$dragon-2, var.$l-card));
+    }
+}

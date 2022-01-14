@@ -1,0 +1,64 @@
+@use "../../../util/variables" as var;
+
+@import "types";
+@import "card-type";
+
+.cards__poke {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.poke {
+    cursor: pointer;
+    width: clamp(180px, 100%, 320px);
+    box-shadow: -2px 2px 0px rgba(0,0,0,.16);
+    border-radius: 15px;
+    padding: 25px 25px;
+    margin: 20px 25px;
+    transition: 200ms ease;
+
+    &:hover {
+        box-shadow: -15px 35px 0px rgba(0,0,0,.12);
+        transform: translateY(-8%);
+    }
+}
+
+.poke__name {
+    font-size: 1.1em;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.poke__types {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: .7em;
+    align-self: flex-end;
+
+    & .poke__types__title {
+        margin-bottom: 10px;
+    }
+
+    & .type {
+        text-align: center;
+        border-radius: 6px;
+        padding: 4px 1.5em;
+        margin: 10px 0;
+        box-shadow: -2px 2px 0px rgba(0,0,0,.16);
+    }
+}
+
+.poke__img {
+    margin-left: 10px;
+    width: 50%;
+    align-self: center;
+
+    & img {
+        object-fit: contain;
+    }
+}
