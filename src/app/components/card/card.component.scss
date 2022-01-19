@@ -3,26 +3,18 @@
 @import "types";
 @import "card-type";
 
-.cards__poke {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
 .poke {
     cursor: pointer;
     width: clamp(180px, 100%, 320px);
-    box-shadow: -2px 2px 0px rgba(0,0,0,.16);
+    min-height: clamp(180px, 100%, 320px);
+    box-shadow: -2px 2px 6px rgba(0,0,0,.1);
     border-radius: 15px;
     padding: 25px 25px;
     margin: 20px 25px;
     transition: 200ms ease;
 
     &:hover {
-        box-shadow: -15px 35px 0px rgba(0,0,0,.12);
+        box-shadow: -15px 35px 0px rgba(0,0,0,.2);
         transform: translateY(-8%);
     }
 }
@@ -56,9 +48,13 @@
 .poke__img {
     margin-left: 10px;
     width: 50%;
-    align-self: center;
+    position: relative;
 
     & img {
+        width: 100%;
+        min-height: 100px;
+        max-height: 100px;
         object-fit: contain;
+        border-radius: 15px;
     }
 }

@@ -1,0 +1,18 @@
+<div class="banner">
+    <div class="banner__text">
+        <h1>Pokedex</h1>
+        <p>Veja detalhes e informações dos <b>mais de 1100 Pokemons!</b> Além de poder analisar suas cadeias evolutivas e seus gatilhos.</p>
+    </div>
+
+    <div class="banner__img">
+        <img src="/assets/images/arceus.svg" alt="Arceus">
+    </div>
+</div>
+
+<ng-container *ngIf="pokemons.length >= limit">
+    <app-card class="d-flex flex-row flex-wrap justify-content-center" [pokemons]="pokemons | orderById"></app-card>
+</ng-container>
+
+<div class="button__ver__mais">
+    <button (click)="verMais()" type="button">Ver Mais <i-feather name="plus"></i-feather></button>
+</div>

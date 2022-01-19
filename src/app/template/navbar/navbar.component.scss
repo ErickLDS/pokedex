@@ -1,7 +1,7 @@
-@use "../../../../util/variables" as var;
+@use "../../../util/variables" as var;
 
 .navbar {
-    padding: 20px;
+    padding: 25px 20px;
     margin-bottom: 80px;
 
     & .container-fluid {
