@@ -1,13 +1,22 @@
 import { NgModule } from '@angular/core';
 
 import { FeatherModule } from 'angular-feather';
-import { Menu, Moon, Sun, Plus } from 'angular-feather/icons';
+import { 
+  Menu, 
+  Moon, 
+  Sun, 
+  Plus, 
+  X, 
+  Search 
+} from 'angular-feather/icons';
 
 const icons = {
   Menu,
   Moon,
   Sun,
-  Plus
+  Plus,
+  X,
+  Search
 };
 
 @NgModule({

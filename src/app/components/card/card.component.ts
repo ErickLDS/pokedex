@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IPokemon } from './interfaces';
 
 @Component({
@@ -8,7 +9,7 @@ import { IPokemon } from './interfaces';
 })
 export class CardComponent {
 
-  @Input() pokemons: IPokemon[] = [];
+  @Input() pokemonURL: Observable<IPokemon> | undefined;
 
   constructor() { }
 

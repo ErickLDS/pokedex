@@ -1,0 +1,30 @@
+.poke__card {
+    cursor: pointer;
+    width: clamp(180px, 100%, 320px);
+    height: clamp(180px, 100%, 320px);
+    margin: 20px 25px;
+    box-shadow: -2px 2px 6px rgba(0,0,0,.1);
+    border-radius: 15px;
+    animation: 500ms ease-in fadeIn;
+    transition: 200ms ease;
+
+    &:hover {
+        box-shadow: -15px 35px 0px rgba(0,0,0,.2);
+        transform: translateY(-8%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-8%);
+        box-shadow: -15px 35px 0px rgba(0,0,0,.2);
+    }
+    50% {
+        transform: translateY(-8%);
+        box-shadow: -15px 35px 0px rgba(0,0,0,.2);
+    }
+    100% {
+        transform: translateY(0%);
+        box-shadow: -2px 2px 6px rgba(0,0,0,.1);
+    }
+}

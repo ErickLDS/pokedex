@@ -1,4 +1,5 @@
 @use "../../../util/mixins";
+@use "../../../util/animations";
 @use "../../../util/variables" as var;
 
 .banner {
@@ -12,9 +13,10 @@
 }
 
 .banner__text {
-    color: var.$black;
+    color: var(--cor-text);
     max-width: 500px;
     align-self: center;
+    width: 50%;
 
     & h1 {
         font-size: 3em;
@@ -24,14 +26,55 @@
     }
 
     & p {
-        font-size: 1.1em;
+        font-size: 1.2em;
+    }
 
+    @media screen and (max-width: 800px) {
+        width: auto;
+        text-align: center;
+        margin-top: 80px;
+
+        & h1 {
+            font-size: 2.6em;
+        }
     }
 }
 
 .banner__img {
     width: clamp(180px, 100%, 350px);
+    height: 350px;
     align-self: flex-end;
+
+    @media screen and (max-width: 800px) {
+        align-self: center;
+    }
+}
+
+.explore {
+    @include mixins.flex-column;
+    
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 80px;
+
+    & h3 {
+        color: var(--cor-text);
+        font-size: 1.6em;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px
+    }
+}
+
+.list__cards {
+    @include mixins.flex-row;    
+
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .button__ver__mais {
@@ -51,9 +94,17 @@
         width: clamp(180px, 50%, 220px);
         box-shadow: -3px 6px 0 rgba(0,0,0,.2);
         transform: translateY(-5%);
+        transition: 150ms ease;
 
         &:active {
-            animation: 250ms click;
+            animation: 150ms ease click;
+        }
+
+        &:disabled {
+            cursor: default;
+            opacity: .6;
+            box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+            transform: translateY(0%);
         }
     }
 
@@ -62,20 +113,5 @@
         width: 1.1em;
         align-self: center;
         stroke-width: 3px;
-    }
-}
-
-@keyframes click {
-    0% {
-        box-shadow: -3px 6px 0 rgba(0,0,0,.2);
-        transform: translateY(-5%);
-    }
-    50% {
-        box-shadow: 1px 1px 5px rgba(0,0,0,.1);
-        transform: translateY(0%);
-    }
-    100% {
-        box-shadow: -3px 6px 0 rgba(0,0,0,.2);
-        transform: translateY(-5%);
     }
 }

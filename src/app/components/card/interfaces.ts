@@ -15,6 +15,7 @@ export interface IPokemon {
 export interface IListPokemons {
     results: IPokemonURL[],
     pokemons: IPokemon[]
+    pokemons_url: IPokemonURL[]
 }
 
 export interface IPokemonURL {

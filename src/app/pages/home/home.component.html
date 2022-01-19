@@ -9,10 +9,24 @@
     </div>
 </div>
 
-<ng-container *ngIf="pokemons.length >= limit">
-    <app-card class="d-flex flex-row flex-wrap justify-content-center" [pokemons]="pokemons | orderById"></app-card>
+<div class="explore">
+    <h3>Explore</h3>
+    <app-searchbar class="w-100"></app-searchbar>
+</div>
+
+<ng-container>
+    <app-list-cards class="list__cards" [pokemonsURL]="pokemonsURL"></app-list-cards>
 </ng-container>
 
 <div class="button__ver__mais">
-    <button (click)="verMais()" type="button">Ver Mais <i-feather name="plus"></i-feather></button>
+    <button (click)="verMais()" type="button" [disabled]="isLoading">
+        <ng-container *ngIf="!isLoading">
+            Ver Mais 
+            <i-feather name="plus"></i-feather>
+        </ng-container>
+        <ng-container *ngIf="isLoading">
+            Carregando 
+            <span class="spinner-grow spinner-grow-sm mx-2" role="status" aria-hidden="true"></span>
+        </ng-container>
+    </button>
 </div>

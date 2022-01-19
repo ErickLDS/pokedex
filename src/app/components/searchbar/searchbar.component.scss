@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+
+    & input {
+        color: var(--cor-text);
+        width: 100%;
+        background: none;
+        padding: 8px 15px;
+        font-size: .9em;
+        font-weight: 400;
+        border: 2px solid var(--cor-text);
+        border-radius: 8px;
+    }
+
+    & button {
+        padding: 0 15px;
+        background-color: var(--cor-text);
+        color: var(--cor-bg);
+        border: 2px solid var(--cor-text);
+        border-radius: 8px;
+        width: clamp(80px, 100%, 100px);
+        margin-left: -15px;
+
+        & i-feather {
+            display: flex;
+            margin: auto;
+            width: 1.2em;
+        }
+    }
+}

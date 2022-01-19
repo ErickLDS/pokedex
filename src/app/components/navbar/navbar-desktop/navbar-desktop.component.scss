@@ -1,0 +1,68 @@
+@use "../../../../util/animations";
+
+.container-fluid {
+    padding: 0;
+    max-width: 1200px;
+
+    & .navbar-logo {
+        width: 55px;
+        height: 55px;
+    
+        & img {
+            object-fit: contain;
+            align-self: center;
+        }
+    }
+
+    & .navbar-toggler {
+        padding: 0;
+        line-height: 0;
+        width: 1.8em;
+        align-self: center;
+        color: var(--cor-text)
+    }
+
+    & .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    & .nav-item {
+        margin: 0 10px;
+        cursor: pointer;    
+    }
+    
+    & .nav-item a {
+        font-size: 1em;
+        font-weight: 400;
+        color: var(--cor-text);
+        padding: 5px 15px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 0px rgba(0,0,0,.2);
+        transition: 150ms ease;
+    
+        &:hover {
+            transform: translateY(-8%);
+            box-shadow: -3px 3px 0px rgba(0,0,0,.2);
+        }
+    }
+    
+    & .nav-item i-feather {
+        width: 2.5em;
+        color: var(--cor-text);
+        display: flex;
+        transition: 200ms ease;
+        border-radius: 8px;
+        padding: 0 10px;
+    
+        &:hover {
+            background-color: var(--cor-text);
+            color: var(--cor-bg);
+            transform: translateY(-10%);
+            box-shadow: -3px 6px 0 rgba(0,0,0,.2);
+        }
+
+        &:active {
+            animation: 100ms ease click;
+        }
+    }
+}

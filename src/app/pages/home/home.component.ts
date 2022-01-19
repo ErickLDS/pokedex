@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPokemon, IPokemonURL } from '../../components/card/interfaces';
+import { IPokemonURL } from '../../components/card/interfaces';
 import { PokeapiService } from '../../services/pokeapi.service';
 
 @Component({
@@ -9,10 +9,12 @@ import { PokeapiService } from '../../services/pokeapi.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public pokemons: IPokemon[] = this.activatedRoute.snapshot.data.pokemons.pokemons
+  public pokemonsURL: IPokemonURL[] = this.activatedRoute.snapshot.data.pokemons
 
   public limit: number = 12;
   public offset: number = 12;
+
+  public isLoading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -20,17 +22,14 @@ export class HomeComponent {
   ) { }
 
   verMais() {
+    this.isLoading = true;
+    
     this.pokeapiService.listPokemons(this.limit, this.offset)
-    .subscribe((res) => {
-      res.results.map((item: IPokemonURL) => {
-        this.pokeapiService.getPokemon(item.url)
-        .subscribe((data: any) => {
-          this.pokemons = data.is_default && this.pokemons.concat(data)
-        })
-      })
+    .subscribe({
+      next: (data) => {this.pokemonsURL = this.pokemonsURL.concat(data)},
+      complete: () => {this.isLoading = false;}
     })
 
     this.offset += this.limit
   }
-
 }

@@ -7,18 +7,18 @@ import {
 
 import { Observable } from 'rxjs';
 
-import { IListPokemons } from './interfaces';
+import { IPokemonURL } from './interfaces';
 import { PokeapiService } from "../../services/pokeapi.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonsResolver implements Resolve<IListPokemons> {
+export class PokemonsResolver implements Resolve<IPokemonURL[]> {
 
   constructor(private pokeapiService: PokeapiService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IListPokemons> {
-    return this.pokeapiService.listPokemonsResolver(12, 0)
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IPokemonURL[]> {
+    return this.pokeapiService.listPokemons(12, 0)
   }
 }
 

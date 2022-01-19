@@ -10,8 +10,12 @@ import { NavbarComponent } from './template/navbar/navbar.component';
 import { FooterComponent } from './template/footer/footer.component';
 
 import { IconsModule } from './icons/icons.module';
-import { OrderByIdPipe } from './components/card/order-by-id.pipe';
 import { CardComponent } from './components/card/card.component';
+import { ListCardsComponent } from './components/list-cards/list-cards.component';
+import { TurnObservablePipe } from './components/list-cards/turn-observable.pipe';
+import { NavbarDesktopComponent } from './components/navbar/navbar-desktop/navbar-desktop.component';
+import { NavbarMobileComponent } from './components/navbar/navbar-mobile/navbar-mobile.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +23,12 @@ import { CardComponent } from './components/card/card.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    OrderByIdPipe,
-    CardComponent
+    CardComponent,
+    ListCardsComponent,
+    TurnObservablePipe,
+    NavbarDesktopComponent,
+    NavbarMobileComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
