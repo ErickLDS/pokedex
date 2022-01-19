@@ -25,7 +25,7 @@ export class HomeComponent {
       res.results.map((item: IPokemonURL) => {
         this.pokeapiService.getPokemon(item.url)
         .subscribe((data: any) => {
-          this.pokemons = this.pokemons.concat(data)
+          this.pokemons = data.is_default && this.pokemons.concat(data)
         })
       })
     })

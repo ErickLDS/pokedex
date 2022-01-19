@@ -27,7 +27,7 @@
     }
 
     &.flying {
-        background-image: linear-gradient(to bottom, lighten(var.$flying-1, var.$l-type) 25%, lighten(var.$flying-2, var.$l-type));
+        background-image: linear-gradient(to bottom, lighten(var.$flying-1, var.$l-type), lighten(var.$flying-2, var.$l-type));
     }
 
     &.electric {
@@ -35,7 +35,7 @@
     }
 
     &.ground {
-        background-image: linear-gradient(to bottom, lighten(var.$ground-1, var.$l-type) 25%, lighten(var.$ground-2, var.$l-type));
+        background-image: linear-gradient(to bottom, lighten(var.$ground-1, var.$l-type), lighten(var.$ground-2, var.$l-type));
     }
 
     &.fairy {
@@ -75,6 +75,6 @@
     }
 
     &.dragon {
-        background-image: linear-gradient(to bottom, lighten(var.$dragon-1, var.$l-type) 25%, lighten(var.$dragon-2, var.$l-type));
+        background-image: linear-gradient(to bottom, lighten(var.$dragon-1, var.$l-type), lighten(var.$dragon-2, var.$l-type));
     }
 }

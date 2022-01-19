@@ -20,7 +20,7 @@ export class PokeapiService {
         res.pokemons = [];
         res.results.map((item: any) => {
           this.getPokemon(item.url).subscribe(
-            data => res.pokemons.push(data)
+            data => data.is_default && res.pokemons.push(data)
           )
         })
       })

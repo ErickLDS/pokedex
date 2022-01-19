@@ -8,7 +8,8 @@ export interface IPokemon {
             }
         },
     },
-    types: Array<any>
+    types: Array<any>,
+    is_default: boolean
 }
 
 export interface IListPokemons {
