@@ -6,10 +6,17 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/ErickLDS/pokedex?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/ErickLDS/pokedex?style=for-the-badge)
 
+<br/>
+
+### Screenshot Página Inicial
+
 <img src="screenshot_1.png" alt="Screenshot Index">
+
+### Screenshot Página Detalhes do Pokemon
+
 <img src="screenshot_2.png" alt="Screenshot Pokemon Details">
 
-### Ajustes e melhorias
+## Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas as seguintes tarefas:
 
