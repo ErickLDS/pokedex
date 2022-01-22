@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Theme } from "./interface";
 
@@ -8,18 +7,33 @@ import { Theme } from "./interface";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   public theme: Theme = 'light-theme';
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
-  ) { }
+  constructor() {}
 
-  switchTheme() {
-    this.document.body.classList.replace(this.theme, 
-      this.theme === 'light-theme' ? (this.theme = 'dark-theme') : (this.theme = 'light-theme')
-    )
+  ngOnInit(): void {
+    localStorage.getItem("theme") != null && (this.theme = <Theme>localStorage.getItem("theme"))
   }
 
+  switchTheme() { 
+    if (localStorage.getItem("theme") != null) {
+      window.document.body.classList.replace(<string>localStorage.getItem("theme"), this.setTheme())
+    } else {
+      window.document.body.classList.replace(this.theme, 
+        this.theme === 'light-theme' ? (this.theme = 'dark-theme') : (this.theme = 'light-theme')
+      )
+      localStorage.setItem("theme", this.theme);
+    }
+  }
+
+  setTheme(): Theme {
+    if (localStorage.getItem("theme") === 'light-theme') {
+      localStorage.setItem("theme", 'dark-theme')
+      return this.theme = 'dark-theme'
+    } else {
+      localStorage.setItem("theme", 'light-theme')
+      return this.theme = 'light-theme'
+    }
+  }
 }

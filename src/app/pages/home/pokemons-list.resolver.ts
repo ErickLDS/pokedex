@@ -13,7 +13,7 @@ import { PokeapiService } from "../../services/pokeapi.service";
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonsResolver implements Resolve<IPokemonURL[]> {
+export class PokemonsListResolver implements Resolve<IPokemonURL[]> {
 
   constructor(private pokeapiService: PokeapiService) {}
 

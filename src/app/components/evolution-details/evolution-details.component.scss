@@ -1,0 +1,40 @@
+.evolution__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & i-feather {
+        width: 1.5em;
+        color: var(--cor-text);
+        stroke-width: 1px;
+    }
+
+    .or {
+        font-size: 1em;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: var(--cor-text);
+    }
+
+    .pokemon__evolution__details {
+        text-align: center;
+        text-transform: capitalize;
+        margin: 15px 0;
+        color: var(--cor-text);
+
+        & h5 {
+            font-size: .8em;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        & p {
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .needed {
+            margin-top: 20px;
+        }
+    }  
+}

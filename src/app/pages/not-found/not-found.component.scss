@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto;
+    align-items: center;
+
+    .img__404 {
+        width: clamp(180px, 90%, 350px);
+        margin-bottom: 50px;
+    }
+
+    p {
+        color: var(--cor-text);
+        font-size: 1.5em;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    a {
+        font-size: 1.2em;
+    }
+}

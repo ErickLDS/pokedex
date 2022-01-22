@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PokeapiService } from '../../services/pokeapi.service';
-import { IPokemon } from '../card/interfaces';
 
 @Component({
   selector: 'app-searchbar',
@@ -24,17 +23,25 @@ export class SearchbarComponent {
     let pokemon = this.pesquisa;
 
     if ((this.pesquisa.trim()).length > 2) {
-      this.pokeapiService.getPokemon((pokemon.trim().toLowerCase()))
+      this.pokeapiService.getPokemonData((pokemon.trim().toLowerCase()))
       .subscribe({
-        next: (data) => {
-          console.log(`/${data.name}/`)
+        next: () => {
+          this.pokeapiService.getPokemonInfo((pokemon.trim().toLowerCase()))
+          .subscribe({
+            next: () => {window.location.href = "/pokemon/"+pokemon},
+            error: () => {
+              this.errorMsg = `Não foi possível encontrar o Pokemon ${pokemon}`
+              this.isLoading = false
+              this.pesquisa = ""
+            },
+            complete: () => {
+              this.isLoading = false
+              this.pesquisa = ""
+            }
+          })
         },
         error: () => {
           this.errorMsg = `Não foi possível encontrar o Pokemon ${pokemon}`
-          this.isLoading = false
-          this.pesquisa = ""
-        },
-        complete: () => {
           this.isLoading = false
           this.pesquisa = ""
         }

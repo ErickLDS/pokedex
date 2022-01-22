@@ -1,5 +1,5 @@
 <div class="search">
-    <input (keyup)="storeValue($event)" [value]="pesquisa" placeholder="Procurar Pokemon" type="text" name="search">
+    <input (keyup)="storeValue($event)" (keyup.enter)="search()" [value]="pesquisa" placeholder="Procurar Pokemon" type="text" name="search">
     <button (click)="search()" type="button" [disabled]="isLoading">
         <ng-container *ngIf="!isLoading">
             <i-feather name="search"></i-feather>

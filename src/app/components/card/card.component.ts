@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IPokemon } from './interfaces';
+import { IPokemonData } from '../../pages/home/interfaces';
 
 @Component({
   selector: 'app-card',
@@ -9,11 +9,11 @@ import { IPokemon } from './interfaces';
 })
 export class CardComponent {
 
-  @Input() pokemonURL: Observable<IPokemon> | undefined;
+  @Input() pokemonURL: Observable<IPokemonData> | undefined;
 
   constructor() { }
 
-  loadImgSkeleton(event: any) {
-    event.target.parentNode.classList.remove('placeholder')
+  redirect(name: string) {
+    window.location.href = "/pokemon/"+name;
   }
 }

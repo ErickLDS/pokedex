@@ -11,6 +11,11 @@
   flex-wrap: nowrap;
 }
 
+.default-theme {
+  --cor-bg: #f9f9f9;
+  --cor-text: #001010;
+}
+
 .light-theme {
   --cor-bg: #f9f9f9;
   --cor-text: #001010;
@@ -79,6 +84,15 @@ p {
     color: #fff;
     background-color: #e63946;
   }
+}
+
+.poke__card {
+  cursor: pointer;
+  width: clamp(180px, 100%, 320px);
+  height: clamp(180px, 100%, 320px);
+  margin: 20px 25px;
+  box-shadow: -2px 2px 6px rgba(0,0,0,.1);
+  border-radius: 15px;
 }
 
 ::-webkit-scrollbar {

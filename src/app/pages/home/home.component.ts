@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPokemonURL } from '../../components/card/interfaces';
+import { IPokemonURL } from './interfaces';
 import { PokeapiService } from '../../services/pokeapi.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PokeapiService } from '../../services/pokeapi.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  public pokemonsURL: IPokemonURL[] = this.activatedRoute.snapshot.data.pokemons
+  public pokemonsURL: IPokemonURL[] = this.activatedRoute.snapshot.data.pokemonsList
 
   public limit: number = 12;
   public offset: number = 12;

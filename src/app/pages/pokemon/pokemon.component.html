@@ -1,0 +1,87 @@
+<div class="pokemon__header">
+    <div class="pokemon__info">
+        <div class="pokemon__class">
+            <p *ngIf="pokemonInfo.is_baby" class="pokemon__baby">Bebê</p>
+            <p *ngIf="pokemonInfo.is_legendary" class="pokemon__legendary">Lendário</p>
+            <p *ngIf="pokemonInfo.is_mythical" class="pokemon__mythical">Místico</p>
+        </div>
+
+        <h1 class="pokemon__name">{{pokemonData.name}}</h1>
+        <p class="pokemon__id">Nº {{pokemonData.id.toString().padStart(2, '0')}}</p>
+        <p class="pokemon__gen">{{pokemonGen}}ª Geração</p>
+
+        <div class="pokemon__types">
+            <p class="pokemon__types__title">
+                tipo<span *ngIf="pokemonData.types.length > 1">s</span>:
+            </p>
+            <div class="d-flex flex-row justify-content-center">
+                <p *ngFor="let type of pokemonData.types" [ngClass]="['type', type.type.name]">
+                    {{type.type.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pokemon__banner">
+        <img class="pokemon__habitat" [src]="pokemonHabitat" alt="pokemonData.name">
+        <img class="pokemon__img" [src]="pokemonData['sprites']['other']['official-artwork']['front_default']" alt="pokemonData.name">
+    </div>
+</div>
+
+<app-pokemon-info-container *ngIf="pokemonEvolution | turnObservableEvolution | async as pokemonEvo" titulo="evoluções">
+    <ng-container *ngIf="pokemonEvo.chain.evolves_to.length > 0">
+        <app-evolution-chain class="evolution__chain" [evolution]="pokemonEvo">
+        </app-evolution-chain>
+    </ng-container>
+
+    <ng-container *ngIf="pokemonEvo.chain.evolves_to.length < 1">
+        <p class="pokemon__alert">Não possui evoluções.</p>
+    </ng-container>
+</app-pokemon-info-container>
+
+<app-pokemon-info-container titulo="mega evolução">
+    <ng-container *ngIf="pokemonMega.length > 0">
+        <div *ngFor="let megaPokemon of pokemonMega" class="mega__evolution">
+            <app-card class="poke__card" [pokemonURL]="megaPokemon | turnObservablePokemon"></app-card>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="pokemonMega.length < 1">
+        <p class="pokemon__alert">Não possui mega evolução.</p>
+    </ng-container>
+</app-pokemon-info-container>
+
+<app-pokemon-info-container titulo="Informações">
+    <div class="pokemon__status">
+        <div class="status__base">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Status Base</th>
+                        <th class="table__head__valor" scope="col">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let stats of pokemonData.stats">
+                        <th scope="row">{{stats.stat.name}}</th>
+                        <td [ngClass]="{
+                            'align-middle': true, 
+                            'bad': stats.base_stat >= 0,
+                            'good': stats.base_stat >= 55,
+                            'excellent': stats.base_stat >= 90
+                        }">{{stats.base_stat}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Happiness</th>
+                        <td [ngClass]="{
+                            'align-middle': true, 
+                            'bad': pokemonInfo.base_happiness >= 0,
+                            'good': pokemonInfo.base_happiness >= 55,
+                            'excellent': pokemonInfo.base_happiness >= 90
+                        }">{{pokemonInfo.base_happiness}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</app-pokemon-info-container>

@@ -1,16 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokeapiService } from '../../services/pokeapi.service';
-import { IPokemon, IPokemonURL } from '../card/interfaces';
+import { IPokemonData, IPokemonURL } from './interfaces';
 
 @Pipe({
-  name: 'turnObservable'
+  name: 'turnObservablePokemon'
 })
-export class TurnObservablePipe implements PipeTransform {
+export class TurnObservablePokemonPipe implements PipeTransform {
 
   constructor(private pokeapiService: PokeapiService) {}
 
-  transform(pokemon: IPokemonURL): Observable<IPokemon> {
+  transform(pokemon: IPokemonURL): Observable<IPokemonData> {
     return this.pokeapiService.getPokemonURL(pokemon)
   }
 

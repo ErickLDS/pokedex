@@ -1,0 +1,23 @@
+<ng-container *ngIf="evolution">
+    <ng-container *ngIf="evolution.chain.evolves_to.length > 0">
+        
+        <!-- Chain 0 -->
+        <div class="pokemon__evolutions">
+            <app-card class="poke__card" [pokemonURL]="evolution.chain.species | turnObservablePokemon"></app-card>
+            
+            <!-- Chain 1 -->
+            <ng-container *ngFor="let evolves_1 of evolution.chain.evolves_to">
+                <app-evolution-details [evolution_details]="evolves_1.evolution_details[0]"></app-evolution-details>
+
+                <app-card class="poke__card" [pokemonURL]="evolves_1.species | turnObservablePokemon"></app-card>
+
+                <!-- Chain 2 -->
+                <ng-container *ngFor="let evolves_2 of evolves_1.evolves_to">
+                    <app-evolution-details [evolution_details]="evolves_2.evolution_details[0]"></app-evolution-details>
+
+                    <app-card class="poke__card" [pokemonURL]="evolves_2.species | turnObservablePokemon"></app-card>
+                </ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,18 @@
+@use "../../../util/mixins";
+
+.pokemon__evolutions__title {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 80px
+}
+
+.pokemon__evolutions {
+    @include mixins.flex-column;
+
+    justify-content: center;
+    align-items: center;  
+}
+

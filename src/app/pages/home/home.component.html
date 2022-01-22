@@ -1,7 +1,7 @@
 <div class="banner">
     <div class="banner__text">
         <h1>Pokedex</h1>
-        <p>Veja detalhes e informações dos <b>mais de 1100 Pokemons!</b> Além de poder analisar suas cadeias evolutivas e seus gatilhos.</p>
+        <p>Veja detalhes e informações dos mais de 1100 Pokemons! Além de poder analisar suas cadeias evolutivas e seus status base.</p>
     </div>
 
     <div class="banner__img">
@@ -14,9 +14,11 @@
     <app-searchbar class="w-100"></app-searchbar>
 </div>
 
-<ng-container>
-    <app-list-cards class="list__cards" [pokemonsURL]="pokemonsURL"></app-list-cards>
-</ng-container>
+<div class="list__cards">
+    <ng-container *ngFor="let pokemonURL of pokemonsURL">
+        <app-card class="poke__card" [pokemonURL]="pokemonURL | turnObservablePokemon"></app-card>
+    </ng-container>
+</div>
 
 <div class="button__ver__mais">
     <button (click)="verMais()" type="button" [disabled]="isLoading">

@@ -11,11 +11,16 @@ import { FooterComponent } from './template/footer/footer.component';
 
 import { IconsModule } from './icons/icons.module';
 import { CardComponent } from './components/card/card.component';
-import { ListCardsComponent } from './components/list-cards/list-cards.component';
-import { TurnObservablePipe } from './components/list-cards/turn-observable.pipe';
+import { TurnObservablePokemonPipe } from './pages/home/turn-observable-pokemon.pipe';
 import { NavbarDesktopComponent } from './components/navbar/navbar-desktop/navbar-desktop.component';
 import { NavbarMobileComponent } from './components/navbar/navbar-mobile/navbar-mobile.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
+import { EvolutionChainComponent } from './components/evolution-chain/evolution-chain.component';
+import { TurnObservableEvolutionPipe } from './pages/pokemon/turn-observable-evolution.pipe';
+import { PokemonInfoContainerComponent } from './components/pokemon-info-container/pokemon-info-container.component';
+import { EvolutionDetailsComponent } from './components/evolution-details/evolution-details.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +29,16 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     NavbarComponent,
     FooterComponent,
     CardComponent,
-    ListCardsComponent,
-    TurnObservablePipe,
+    TurnObservablePokemonPipe,
     NavbarDesktopComponent,
     NavbarMobileComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    PokemonComponent,
+    EvolutionChainComponent,
+    TurnObservableEvolutionPipe,
+    PokemonInfoContainerComponent,
+    EvolutionDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

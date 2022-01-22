@@ -1,0 +1,50 @@
+<div class="evolution__details" *ngIf="evolution_details">
+    <i-feather name="chevrons-down"></i-feather>
+
+    <div class="pokemon__evolution__details">
+        <div class="trigger">
+            <h5>Gatilho:</h5>
+            <p *ngIf="evolution_details.trigger.name === 'level-up'">{{evolution_details.trigger.name}}</p>
+            <p *ngIf="evolution_details.trigger.name === 'trade'">{{evolution_details.trigger.name}}</p>
+            <p *ngIf="evolution_details.trigger.name === 'use-item'">{{evolution_details.trigger.name}}</p>
+            <p *ngIf="evolution_details.trigger.name === 'shed'">{{evolution_details.trigger.name}}</p>
+            <p *ngIf="evolution_details.trigger.name === 'other'">{{evolution_details.trigger.name}}</p>
+        </div>
+ 
+        <ng-container *ngIf="evolution_details.trigger.name != 'other'">
+        <ng-container *ngIf="evolution_details.trigger.name != 'shed'">
+        <div class="needed">
+            <h5>Necessário:</h5>
+            <p *ngIf="evolution_details.min_level">Min Level: {{evolution_details.min_level}}</p>
+            <p *ngIf="evolution_details.min_happiness">Min Happiness: {{evolution_details.min_happiness}}</p>
+            <p *ngIf="evolution_details.gender">Gênero: {{evolution_details.gender == 1 ? 'fêmea' : 'macho'}}</p>
+            <p *ngIf="evolution_details.held_item">segurar item: {{evolution_details.held_item.name}}</p>
+            <p *ngIf="evolution_details.item">item: {{evolution_details.item.name}}</p>
+            <p *ngIf="evolution_details.known_move">known move: {{evolution_details.known_move.name}}</p>
+            <p *ngIf="evolution_details.known_move_type">known move type: {{evolution_details.known_move_type.name}}</p>
+            <p *ngIf="evolution_details.location">location: {{evolution_details.location.name}}</p>
+            <p *ngIf="evolution_details.min_affection">min affection: {{evolution_details.min_affection}}</p>
+            <p *ngIf="evolution_details.min_beauty">min beauty: {{evolution_details.min_beauty}}</p>
+            <p *ngIf="evolution_details.needs_overworld_rain">Durante chuva</p>
+            <p *ngIf="evolution_details.party_species">party species: {{evolution_details.party_species.name}}</p>
+            <p *ngIf="evolution_details.party_type">party type: {{evolution_details.party_type.name}}</p>
+
+            <p *ngIf="evolution_details.relative_physical_stats">Status: 
+                {{evolution_details.relative_physical_stats === 1 ? 'Ataque > Defesa' : ''}}
+                {{evolution_details.relative_physical_stats === -1 ? 'Ataque < Defesa' : ''}}
+                {{evolution_details.relative_physical_stats === 0 ? 'Ataque = Defesa' : ''}}
+            </p>
+
+            <p *ngIf="evolution_details.time_of_day">time of day: {{evolution_details.time_of_day}}</p>
+            <p *ngIf="evolution_details.trade_species">trade species: {{evolution_details.trade_species.name}}</p>
+        </div>
+        </ng-container>
+        </ng-container>
+    </div>
+    
+    <i-feather name="chevrons-down"></i-feather>
+</div>
+
+<div class="evolution__details" *ngIf="!evolution_details">
+    <i-feather name="chevrons-down"></i-feather>
+</div>

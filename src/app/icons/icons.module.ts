@@ -7,7 +7,8 @@ import {
   Sun, 
   Plus, 
   X, 
-  Search 
+  Search,
+  ChevronsDown
 } from 'angular-feather/icons';
 
 const icons = {
@@ -16,7 +17,8 @@ const icons = {
   Sun,
   Plus,
   X,
-  Search
+  Search,
+  ChevronsDown
 };
 
 @NgModule({

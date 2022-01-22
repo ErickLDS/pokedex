@@ -1,8 +1,8 @@
 <div 
     *ngIf="pokemonURL | async as pokemon; else loading" 
     [ngClass]="['poke', pokemon.types[0].type.name]"
+    (click)="pokemon.is_default && redirect(pokemon.name)"
 >
-
     <p class="poke__name">{{pokemon.name}}</p>
 
     <div class="d-flex flex-row justify-content-between">
@@ -17,11 +17,11 @@
             </div>
         </div>
 
-        <div class="poke__img placeholder">
+        <div class="poke__img">
             <img 
-            (load)="loadImgSkeleton($event)" 
             [src]="pokemon['sprites']['other']['official-artwork']['front_default']" 
             [alt]="pokemon.name"
+            loading="lazy"
             >
         </div>
     </div>

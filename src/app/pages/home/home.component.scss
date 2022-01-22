@@ -77,6 +77,16 @@
     margin: auto;
 }
 
+.poke__card {
+    animation: 500ms ease-in fadeIn;
+    transition: 200ms ease;
+
+    &:hover {
+        box-shadow: -15px 35px 12px rgba(0,0,0,.1);
+        transform: translateY(-8%);
+    }
+}
+
 .button__ver__mais {
     display: flex;
     justify-content: center;
@@ -92,7 +102,7 @@
         padding: 12px 20px;
         border-radius: 8px;
         width: clamp(180px, 50%, 220px);
-        box-shadow: -3px 6px 0 rgba(0,0,0,.2);
+        box-shadow: -4px 6px 6px rgba(0,0,0,.2);
         transform: translateY(-5%);
         transition: 150ms ease;
 
@@ -113,5 +123,20 @@
         width: 1.1em;
         align-self: center;
         stroke-width: 3px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-8%);
+        box-shadow: -15px 35px 12px rgba(0,0,0,.1);
+    }
+    50% {
+        transform: translateY(-8%);
+        box-shadow: -15px 35px 12px rgba(0,0,0,.1);
+    }
+    100% {
+        transform: translateY(0%);
+        box-shadow: -2px 2px 6px rgba(0,0,0,.1);
     }
 }

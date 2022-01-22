@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IListPokemons, IPokemon, IPokemonURL } from '../components/card/interfaces';
+import { IEvolution, IListPokemons, IPokemonData, IPokemonInfo, IPokemonURL } from '../pages/home/interfaces';
 
 import { map } from "rxjs/operators"
 
@@ -20,14 +20,18 @@ export class PokeapiService {
   }
 
   getPokemonURL(pokemonURL: IPokemonURL) {
-    return this.http.get<IPokemon>(pokemonURL.url)
+    return this.http.get<IPokemonData>(`${API}pokemon/${pokemonURL.name}`)
   }
 
-  getPokemon(id: string) {
-    return this.http.get<IPokemon>(`${API}pokemon/${id}`)
+  getPokemonData(id: string) {
+    return this.http.get<IPokemonData>(`${API}pokemon/${id}`)
   }
 
-  getPokemonSpecies(id: string) {
-    return this.http.get<IPokemon>(`${API}pokemon-species/${id}`)
+  getPokemonInfo(id: string) {
+    return this.http.get<IPokemonInfo>(`${API}pokemon-species/${id}`)
+  }
+
+  getEvolution(url: string) {
+    return this.http.get<IEvolution>(url)
   }
 }
