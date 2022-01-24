@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Theme } from "./interface";
+import { Theme } from "./types";
 
 @Component({
   selector: 'app-navbar',

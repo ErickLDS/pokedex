@@ -21,6 +21,7 @@ import { TurnObservableEvolutionPipe } from './pages/pokemon/turn-observable-evo
 import { PokemonInfoContainerComponent } from './components/pokemon-info-container/pokemon-info-container.component';
 import { EvolutionDetailsComponent } from './components/evolution-details/evolution-details.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PokemonStatusBaseComponent } from './components/pokemon-status-base/pokemon-status-base.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     TurnObservableEvolutionPipe,
     PokemonInfoContainerComponent,
     EvolutionDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PokemonStatusBaseComponent
   ],
   imports: [
     BrowserModule,

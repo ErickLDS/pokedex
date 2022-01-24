@@ -1,0 +1,43 @@
+.status__base {
+    width: clamp(180px, 90%, 500px);
+    border: 15px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-text);
+    padding: 10px 15px;
+
+    & table {
+        color: var(--cor-text);
+
+        & thead {
+            .table__head__valor {
+                text-align: center;
+            }
+        }
+
+        & tbody {
+            & th {
+                font-size: 1em;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+
+            & td {
+                text-align: center;
+                font-size: 1em;
+                font-weight: 500;
+            }
+        } 
+    }
+}
+
+.bad {
+    color: #f78b2d;
+}
+
+.good {
+    color: #aab80f;
+}
+
+.excellent {
+    color: #15d100;
+}

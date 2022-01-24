@@ -40,6 +40,7 @@
         justify-content: flex-start;
         width: 100%;
         margin-top: 25px;
+        display: none;
 
         & .theme__title {
             color: var(--cor-text);
@@ -77,6 +78,10 @@
         &:active button {
             transform: translateY(10%);
             box-shadow: 0px 0px 0px rgba(0,0,0,.2);
+        }
+
+        @media screen and (max-width: 991px) {
+            display: flex;
         }
     }
 }

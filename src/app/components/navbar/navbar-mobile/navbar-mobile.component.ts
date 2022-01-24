@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Theme } from '@/src/app/template/navbar/interface';
+import { Theme } from '@/src/app/template/navbar/types';
 
 @Component({
   selector: 'app-navbar-mobile',

@@ -1,0 +1,30 @@
+<div *ngIf="status" class="status__base">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Status Base</th>
+                <th class="table__head__valor" scope="col">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stats of status">
+                <th scope="row">{{stats.stat.name}}</th>
+                <td [ngClass]="{
+                    'align-middle': true, 
+                    'bad': stats.base_stat >= 0,
+                    'good': stats.base_stat >= 55,
+                    'excellent': stats.base_stat >= 90
+                }">{{stats.base_stat}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Happiness</th>
+                <td [ngClass]="{
+                    'align-middle': true, 
+                    'bad': happiness >= 0,
+                    'good': happiness >= 55,
+                    'excellent': happiness >= 90
+                }">{{happiness}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

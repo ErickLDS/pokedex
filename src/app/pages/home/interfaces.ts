@@ -10,12 +10,7 @@ export interface IPokemonData {
     },
     types: Array<any>,
     is_default: boolean,
-    stats: Array<{
-        base_stat: number,
-        stat: {
-            name: string
-        }
-    }>
+    stats: Array<IStatus>
 }
 
 export interface IPokemonInfo {
@@ -63,6 +58,13 @@ export interface IEvolutionDetails {
     time_of_day: any,
     trade_species: any,
     trigger: {
+        name: string
+    }
+}
+
+export interface IStatus {
+    base_stat: number,
+    stat: {
         name: string
     }
 }

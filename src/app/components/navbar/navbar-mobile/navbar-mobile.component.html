@@ -1,11 +1,15 @@
 <div class="offcanvas__container"> 
     <div class="offcanvas-header">
+
         <div class="menu__header">
             <p class="offcanvas-title" id="offcanvasNavbarLabel">Menu</p>
             <i-feather name="X" data-bs-dismiss="offcanvas" aria-label="Close"></i-feather>
         </div>
+
         <div class="theme__toggle">
+
             <p class="theme__title">Tema:</p>
+
             <div (click)="switchTheme()">
                 <button *ngIf="theme === 'light-theme'" type="button">
                     <p>Dark</p>
@@ -16,13 +20,16 @@
                     <i-feather name="sun"></i-feather>
                 </button>
             </div>
+
         </div>
     </div>
+
     <hr>
+
     <div class="offcanvas-body">
+        
         <div class="menu__items">
             <a href="/">Início</a>
-            <a href="/about">Sobre</a>
         </div>
 
         <app-searchbar class="w-100"></app-searchbar>

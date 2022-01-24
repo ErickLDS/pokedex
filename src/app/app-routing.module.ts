@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "404"
+    component: NotFoundComponent
   }
 ];
 

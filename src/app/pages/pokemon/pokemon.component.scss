@@ -115,59 +115,6 @@ $mythical: #fb8500;
     justify-content: center;
     align-items: center;
     padding-top: 10px;
-
-    & h1 {
-        color: var(--cor-text);
-        font-size: 1.5em;
-        font-weight: 500;
-        margin-bottom: 40px;
-        text-transform: capitalize;
-        text-align: center;
-    }
-
-    .status__base {
-        width: clamp(180px, 90%, 500px);
-        border: 15px;
-        border-radius: 15px;
-        border: 2px solid var(--cor-text);
-        padding: 10px 15px;
-
-        & table {
-            color: var(--cor-text);
-
-            & thead {
-                .table__head__valor {
-                    text-align: center;
-                }
-            }
-
-            & tbody {
-                & th {
-                    font-size: 1em;
-                    font-weight: 500;
-                    text-transform: capitalize;
-                }
-
-                & td {
-                    text-align: center;
-                    font-size: 1em;
-                    font-weight: 500;
-                }
-            } 
-        }
-    }
-
-    .bad {
-        color: #f78b2d;
-    }
-
-    .good {
-        color: #aab80f;
-    }
-
-    .excellent {
-        color: #15d100;
-    }
 }
 
 .pokemon__alert {

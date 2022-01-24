@@ -9,13 +9,13 @@ import { RouterEvent, NavigationError, Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'pokedex';
 
-  constructor(private router: Router, private cdr: ChangeDetectorRef) {}
+  constructor(private router: Router, private changeDetectorRef: ChangeDetectorRef) {}
 
   navigationInterceptor(event: RouterEvent): void {
     if (event instanceof NavigationError) {
       this.router.navigate(["404"]);
     }
-    this.cdr.detectChanges();
+    this.changeDetectorRef.detectChanges();
   }
 
   ngOnInit() {
