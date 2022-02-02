@@ -13,7 +13,7 @@ Tive como finalidade por em prática tudo o que estudei sobre Angular 12.
 
 <br/>
 
-## Tecnologias Utilizadas No Projeto:
+## Principais Tecnologias Utilizadas No Projeto:
 
 <div>
 <img align="center" width="40px" height="40px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" alt="Angular"/> 
